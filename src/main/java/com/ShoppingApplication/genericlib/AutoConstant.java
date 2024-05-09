@@ -1,6 +1,6 @@
 package com.ShoppingApplication.genericlib;
 /*
- * Author :- Nikita Tank
+ * Author :- Moti Tank
  */
 
 public interface AutoConstant {
