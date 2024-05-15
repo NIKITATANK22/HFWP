@@ -21,7 +21,7 @@ private WebElement searchBtn;
 @FindBy(xpath="//a[text()='Dresses'][2]")
 private WebElement dressBtn ;
 
-@FindBy(xpath="//a[text()='Evenind Dresses'][2]")
+@FindBy(xpath="//a[text()='Evening Dresses'][2]")
 private WebElement eveningdress ;
 
 public WebElement getDressBtn() {

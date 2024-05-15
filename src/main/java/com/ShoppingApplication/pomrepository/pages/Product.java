@@ -15,7 +15,7 @@ public class Product {
 	@FindBy(id="selectProductSort")
 	private WebElement sortByDd;
 	
-	@FindBy(xpath="(//a[@title='Printed Summer Dress'])[3]")
+	@FindBy(xpath="//a[@title='Printed Summer Dress'][3]")
 	private WebElement dress;
 
 	public WebElement getSortByDd() {

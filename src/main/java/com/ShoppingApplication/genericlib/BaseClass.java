@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-/*
- * Author :- Nikita
+/**
+ * @author nikita
  */
 
 import org.openqa.selenium.WebDriver;
@@ -24,6 +24,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 public class BaseClass implements AutoConstant {
 	public ExtentHtmlReporter htmlreport;
 	public ExtentReports reports;
+	public WebDriver driver;
 	
 	@BeforeSuite
 	public void configBS()	{
@@ -32,14 +33,12 @@ public class BaseClass implements AutoConstant {
 		 htmlreport.config().setDocumentTitle("ExtentReport");
 		 htmlreport.config().setTheme(Theme.DARK);
 		 reports =new ExtentReports(); 
-		 reports.attachReporter(htmlreport);
-		 
+		 reports.attachReporter(htmlreport);		 
 	}	
+	
 	/*
 	 * It is used to launch the application,enter the url and closing the application
-	 */
-	
-	public WebDriver driver;
+	 */	
 	
 	@BeforeMethod
 	public void openapp() throws FileNotFoundException, IOException
@@ -50,13 +49,14 @@ public class BaseClass implements AutoConstant {
 	driver.get(Propertylib.getpropertydata("URL"));
 	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
-
-	@AfterMethod()
+	
 	/**
 	 * It is used to take screenshot of failed testcase and close the application
 	 * @param r
 	 * @throws IOException
 	 */
+	
+	@AfterMethod
 	public void closeapp(ITestResult r) throws IOException
 	{
 		int status = r.getStatus();
